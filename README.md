@@ -1,3 +1,68 @@
+# Welcome to the Happy Accident Paint Shop!
+
+## Organization of Components
+
+This project is organized into four components: \
+- `App` (App.js): includes all data for rendering (paints and filtering categories),
+as well as sorting and filtering functionality.
+- `FilterList` (FilterList.jsx): a purely structural component, which is "in charge"
+of rendering the list of `ListItem`s for the main shop.
+- `Cart` (Cart.jsx): a component which is "in charge" of rendering all items in the cart,
+as well as calculating price and managing the pseudo-checkout (i.e. sending the user an alert).
+- `ListItem` (ListItem.jsx): the ListItem, whose appearance and functionality changes
+slightly based on whether or not it is in the `Cart`.
+
+## How data is passed down
+
+As stated above, most of the functionality and all of the data is in `App`. This includes
+management of filtering and sorting, as well as adding or removing items from the `Cart`.
+
+### Data
+
+`App` includes the list of paints that can be rendered into `ListItem`s, which are then filtered and sorted (see below)
+before being passed down to `FilterList`, which renders the paints as a list of `ListItem`s. `App` also manages
+the cart in its component state, which is then passed down to `Cart` to be rendered there into `ListItem`s. \
+
+`App` also includes the list of possible filters, which it renders into Bootstrap `ToggleButton`s and
+tracks in its component state.
+
+### Management of filtering and sorting
+
+`App` manages all filtering and sorting. Based on which `ToggleButton` the user selects,
+`App` updates its state to reflect the current filters selected. This then triggers a call to
+the `checkAll` function, which updates the list of paints that is passed down into `FilterList`.
+`checkAll` calls two helpers, `checkLevel` and `checkWarmth`, which compare each paint's
+level (e.g. primary, secondary, tertiary) and warmth (e.g. warm, cool) to the currently
+selected filters (tracked via App state).
+
+Similar functionality exists for sorting. The selected sort type is tracked via App, and is initially set
+to 'none', simply so that a user (or TA) can check that the sort functions actually work :). I have created
+two sorting helpers, `sortAscending` and `sortDescending`, which I then pass into the Array.prototype.sort()
+function so that the `FilterList` renders a sorted list of elements.
+
+### User interaction
+
+Users can interact with the application in a number of ways, all of them different types
+of `Button`s.
+
+#### `ToggleButton`s
+
+These buttons are in charge of filtering and sorting. I've added different backgrounds to the
+filter buttons based on their meaning, which is a fun piece of user interaction – the warmth buttons
+have different background colors, while the level buttons have a gradient displaying some of the colors
+they display.
+
+#### `Add to cart`, `Add a squeeze`, `Remove one squeeze`, `Remove from Cart`
+
+These buttons allow a user to manage which elements are in their cart, as well as
+to manage the quantity of the elements in the cart.
+
+#### `Checkout`
+
+This button allows a user to go to "checkout," which here means sending an alert
+to the user via the browser that tells them how much paint (in dollars) is in their
+cart.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

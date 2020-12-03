@@ -1,13 +1,200 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  background-image: url(https://i.pinimg.com/originals/4f/18/51/4f1851e787eb7a0eed28fea924735d23.jpg);
+  padding-left: 10vw;
+  line-height: 1.2em;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  max-width: 80vw;
+  align-items: center;
+  align-content: center;
+  /* background-color: #dcfaeb; */
+  /* background-image: url(https://st.depositphotos.com/2737297/4743/v/600/depositphotos_47433887-stock-illustration-fabric-texture.jpg); */
+}
+
+.App {
+  padding: 2vw;
+  background-color: #fcfced;
+  background-image: url(https://st.depositphotos.com/2737297/4743/v/600/depositphotos_47433887-stock-illustration-fabric-texture.jpg);
+}
+
+p {
+  margin: 4px 0px;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: rgba(252, 252, 237, 0.7);
+}
+
+.list, .cart {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.cart .list {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-KRC4ynn6NjIspvutLHHoqH7a9eZYfrXArg&usqp=CAU);
+}
+
+.listitem {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 16px;
+  /* align-items: center; */
+  /* padding: 8px; */
+  border-radius: 12px;
+  border: 4px solid black;
+  justify-content: space-between;
+}
+
+.listitem img {
+  max-width: 200px;
+  /* margin: -8px; */
+}
+
+.mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  height: 200px;
+  margin-top: 8px;
+}
+
+.info-panel p {
+  /* background-color: #F8F4F4; */
+  background-color: rgba(252, 252, 237, 0.8);
+  max-width: 100%;
+  align-self: center;
+  text-align: right;
+  margin-left: 2px;
+  margin-top: 8px;
+  padding: 4px 8px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.info-panel p.name {
+  font-weight: bold;
+  text-align: left;
+}
+
+/* button {
+  padding: 8px;
+  background-color: #F8F4F4;
+  margin-left: auto;
+  border-radius: 4px;
+  font-family: 'Playfair Display';
+} */
+
+.liked {
+  margin-right: 0px;
+  margin-top: 24px;
+}
+
+.border {
+  border: 4px solid rgba(240, 255, 0, 1);
+}
+
+.border > .liked {
+  text-align: left;
+  margin-right: 0px;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+}
+
+button.btn.btn-light {
+  border: 1px solid black;
+}
+
+button.btn.btn-dark {
+  margin-top: 8px;
+  background-color: black;
+  border: 1px solid white;
+}
+
+button.checked {
+  background-color: black;
+  border: none;
+}
+
+button.checked:focus {
+  background-color: black;
+}
+
+button.checked.warm {
+  background-color: rgba(255, 165, 0, 0.6);
+  color: black;
+}
+
+button.checked.cool {
+  background-color: rgba(0, 0, 255, 0.5);
+  color: black;
+}
+
+button.checked.primary {
+  background-color: white;
+  background-image: linear-gradient(rgba(255, 0, 0, 0.5), 	rgba(255,255,0.5), 	rgba(0, 0, 255, 0.5));
+  color: black;
+}
+
+button.checked.secondary {
+  background-color: white;
+  background-image: linear-gradient(rgba(255, 165, 0, 0.6), rgba(60, 179, 113, 0.6), rgba(106, 90, 205, 0.6));
+  color: black;
+}
+
+button.checked.tertiary {
+  background-image: linear-gradient(rgba(95, 46, 31, 0.6), rgba(34, 27, 21, 0.6));
+  background-color: white;
+  color: black;
+}
+
+#splash-img-div {
+  border-radius: 8px;
+  margin-bottom: 8px;
+  padding: 16px;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-KRC4ynn6NjIspvutLHHoqH7a9eZYfrXArg&usqp=CAU);
+}
+
+.splash {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.filter-group {
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+}
+
+.filter-group h4, .filter-group p, .filter-group div {
+  margin-right: 8px;
+}
+
+.sort-group {
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+}
+
+.sort-group h4, .sort-group div {
+  margin-right: 8px;
+}
+
+.block {
+  margin: 4px 0px;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: rgba(252, 252, 237, 0.5);
+}
+
+.info-panel {
+  background-color: rgba(252, 252, 237, 0.75);
+  padding: 8px;
+  border-radius: 0px 0px 8px 8px;
 }
