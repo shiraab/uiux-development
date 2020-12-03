@@ -50,12 +50,14 @@ of `Button`s.
 These buttons are in charge of filtering and sorting. I've added different backgrounds to the
 filter buttons based on their meaning, which is a fun piece of user interaction – the warmth buttons
 have different background colors, while the level buttons have a gradient displaying some of the colors
-they display.
+they display. They essentially change `App` state, which then filters or sorts the paints based on their
+chosen criteria.
 
 #### `Add to cart`, `Add a squeeze`, `Remove one squeeze`, `Remove from Cart`
 
 These buttons allow a user to manage which elements are in their cart, as well as
-to manage the quantity of the elements in the cart.
+to manage the quantity of the elements in the cart. They modify `App`'s cart state,
+and this changed state gets passed down to the `Cart` component.
 
 #### `Checkout`
 
