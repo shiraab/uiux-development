@@ -109,12 +109,18 @@ p {
 
 button.btn.btn-light {
   border: 1px solid black;
+  box-shadow: 2px 2px 5px grey;
+}
+
+button.btn {
+  box-shadow: 2px 2px 5px grey;
 }
 
 button.btn.btn-dark {
   margin-top: 8px;
   background-color: black;
   border: 1px solid white;
+  box-shadow: 2px 2px 5px grey;
 }
 
 button.checked {
@@ -197,4 +203,8 @@ button.checked.tertiary {
   background-color: rgba(252, 252, 237, 0.75);
   padding: 8px;
   border-radius: 0px 0px 8px 8px;
+}
+
+.btn-group {
+  box-shadow: 2px 2px 5px grey;
 }
